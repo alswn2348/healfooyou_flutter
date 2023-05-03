@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:healfooyou_flutter/authentication/widgets/form_button.dart';
 import 'package:healfooyou_flutter/constants/gaps.dart';
 import 'package:healfooyou_flutter/constants/sizes.dart';
 
@@ -50,7 +51,7 @@ class LoginScreen extends StatelessWidget {
             ),
             Gaps.v20,
             const FormButton(
-              title: "비밀번호",
+              title: "회원가입",
             ),
             Gaps.v40,
             const AuthButton(
@@ -59,37 +60,6 @@ class LoginScreen extends StatelessWidget {
             )
           ],
         )),
-      ),
-    );
-  }
-}
-
-class FormButton extends StatelessWidget {
-  const FormButton({
-    super.key,
-    this.title = 'button',
-  });
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return FractionallySizedBox(
-      widthFactor: 1,
-      child: Container(
-        padding: const EdgeInsets.all(Sizes.size10),
-        decoration: const BoxDecoration(
-          color: Colors.red,
-          borderRadius: BorderRadius.all(
-            Radius.circular(Sizes.size10),
-          ),
-        ),
-        child: Text(
-          title,
-          textAlign: TextAlign.center,
-          style: const TextStyle(
-            color: Colors.white,
-          ),
-        ),
       ),
     );
   }
