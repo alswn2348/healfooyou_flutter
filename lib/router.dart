@@ -1,7 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:healfooyou_flutter/authentication/login_screen.dart';
 import 'package:healfooyou_flutter/authentication/sign_up_screen.dart';
-import 'package:healfooyou_flutter/navigator.dart';
+import 'package:healfooyou_flutter/common/main_navigation/navigator.dart';
 
 final router = GoRouter(
   initialLocation: "/home",

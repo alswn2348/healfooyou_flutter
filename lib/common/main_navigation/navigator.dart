@@ -1,7 +1,5 @@
-
-
-
 import 'package:flutter/material.dart';
+import 'package:healfooyou_flutter/home/home_screen.dart';
 
 class Navigator extends StatefulWidget {
   static String routeName = "home";
@@ -58,11 +56,7 @@ class _NavigatorState extends State<Navigator> {
           alignment: Alignment.center,
           child: const Text('Page 2'),
         ),
-        Container(
-          color: Colors.blue,
-          alignment: Alignment.center,
-          child: const Text('Page 3'),
-        ),
+        const HomeScreen(),
         Container(
           color: Colors.yellow,
           alignment: Alignment.center,
