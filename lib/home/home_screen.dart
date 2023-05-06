@@ -22,12 +22,14 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
-        body: TabBarView(children: [
-          for (var tab in tabs)
-            Center(
-              child: Text(tab),
-            )
-        ]),
+        body: TabBarView(
+          children: [
+            for (var tab in tabs)
+              Center(
+                child: Text(tab),
+              )
+          ],
+        ),
       ),
     );
   }

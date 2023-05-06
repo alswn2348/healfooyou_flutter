@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:healfooyou_flutter/home/home_screen.dart';
+import 'package:healfooyou_flutter/user/user_profile_screen.dart';
 
 class Navigator extends StatefulWidget {
   static String routeName = "home";
@@ -57,11 +58,7 @@ class _NavigatorState extends State<Navigator> {
           child: const Text('Page 2'),
         ),
         const HomeScreen(),
-        Container(
-          color: Colors.yellow,
-          alignment: Alignment.center,
-          child: const Text('Page 4'),
-        ),
+        const UserProfileScreen()
       ][currentPageIndex],
     );
   }
