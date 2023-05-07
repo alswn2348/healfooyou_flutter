@@ -35,19 +35,19 @@ class UserProfileScreen extends StatelessWidget {
             ),
           ),
           Gaps.v32,
-          const tabBotton(
+          const TabBotton(
             text: "추천받은 제품 목록",
           ),
           Gaps.v5,
-          const tabBotton(
+          const TabBotton(
             text: "리뷰 관리",
           ),
           Gaps.v5,
-          const tabBotton(
+          const TabBotton(
             text: "문의 목록",
           ),
           Gaps.v5,
-          const tabBotton(
+          const TabBotton(
             text: "찜",
           ),
         ]),
@@ -56,8 +56,8 @@ class UserProfileScreen extends StatelessWidget {
   }
 }
 
-class tabBotton extends StatelessWidget {
-  const tabBotton({
+class TabBotton extends StatelessWidget {
+  const TabBotton({
     super.key,
     required this.text,
   });
