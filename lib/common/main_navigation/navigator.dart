@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:healfooyou_flutter/home/home_screen.dart';
+import 'package:healfooyou_flutter/survey/interests_screen.dart';
 import 'package:healfooyou_flutter/user/user_profile_screen.dart';
 
 class Navigator extends StatefulWidget {
@@ -52,11 +53,7 @@ class _NavigatorState extends State<Navigator> {
           alignment: Alignment.center,
           child: const Text('Page 1'),
         ),
-        Container(
-          color: Colors.green,
-          alignment: Alignment.center,
-          child: const Text('Page 2'),
-        ),
+        const InterestsScreen(),
         const HomeScreen(),
         const UserProfileScreen()
       ][currentPageIndex],

@@ -2,6 +2,7 @@ import 'package:go_router/go_router.dart';
 import 'package:healfooyou_flutter/authentication/login_screen.dart';
 import 'package:healfooyou_flutter/authentication/sign_up_screen.dart';
 import 'package:healfooyou_flutter/common/main_navigation/navigator.dart';
+import 'package:healfooyou_flutter/survey/interests_screen.dart';
 
 final router = GoRouter(
   initialLocation: "/home",
@@ -20,6 +21,11 @@ final router = GoRouter(
       name: Navigator.routeName,
       path: Navigator.routeURL,
       builder: (context, state) => const Navigator(),
+    ),
+    GoRoute(
+      name: InterestsScreen.routeName,
+      path: InterestsScreen.routeURL,
+      builder: (context, state) => const InterestsScreen(),
     ),
   ],
 );
