@@ -11,10 +11,7 @@ class UserProfileScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           "마이페이지",
-          style: TextStyle(color: Colors.black),
         ),
-        elevation: 0,
-        backgroundColor: Colors.grey.shade200,
       ),
       body: Container(
         padding: const EdgeInsets.only(

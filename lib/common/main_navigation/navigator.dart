@@ -3,16 +3,16 @@ import 'package:healfooyou_flutter/home/home_screen.dart';
 import 'package:healfooyou_flutter/survey/interests_screen.dart';
 import 'package:healfooyou_flutter/user/user_profile_screen.dart';
 
-class Navigator extends StatefulWidget {
+class MainNavigator extends StatefulWidget {
   static String routeName = "home";
   static String routeURL = "/home";
-  const Navigator({super.key});
+  const MainNavigator({super.key});
 
   @override
-  State<Navigator> createState() => _NavigatorState();
+  State<MainNavigator> createState() => _MainNavigatorState();
 }
 
-class _NavigatorState extends State<Navigator> {
+class _MainNavigatorState extends State<MainNavigator> {
   int currentPageIndex = 2;
 
   @override
@@ -27,8 +27,9 @@ class _NavigatorState extends State<Navigator> {
         selectedIndex: currentPageIndex,
         destinations: const <Widget>[
           NavigationDestination(
-            icon: Icon(Icons.menu),
-            label: '메뉴',
+            selectedIcon: Icon(Icons.house),
+            icon: Icon(Icons.house_outlined),
+            label: '홈',
           ),
           NavigationDestination(
             selectedIcon: Icon(Icons.description),
@@ -36,9 +37,8 @@ class _NavigatorState extends State<Navigator> {
             label: '설문',
           ),
           NavigationDestination(
-            selectedIcon: Icon(Icons.house),
-            icon: Icon(Icons.house_outlined),
-            label: '홈',
+            icon: Icon(Icons.bar_chart),
+            label: '랭킹',
           ),
           NavigationDestination(
             selectedIcon: Icon(Icons.person),
@@ -48,14 +48,10 @@ class _NavigatorState extends State<Navigator> {
         ],
       ),
       body: <Widget>[
-        Container(
-          color: Colors.red,
-          alignment: Alignment.center,
-          child: const Text('Page 1'),
-        ),
+        const HomeScreen(),
         const InterestsScreen(),
         const HomeScreen(),
-        const UserProfileScreen()
+        const UserProfileScreen(),
       ][currentPageIndex],
     );
   }

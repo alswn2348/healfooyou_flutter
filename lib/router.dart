@@ -6,7 +6,7 @@ import 'package:healfooyou_flutter/survey/interests_screen.dart';
 import 'package:healfooyou_flutter/survey/user_information_screen.dart';
 
 final router = GoRouter(
-  initialLocation: "/userInfo",
+  initialLocation: "/home",
   routes: [
     GoRoute(
       name: LoginScreen.routeName,
@@ -19,9 +19,9 @@ final router = GoRouter(
       builder: (context, state) => const SignUpScreen(),
     ),
     GoRoute(
-      name: Navigator.routeName,
-      path: Navigator.routeURL,
-      builder: (context, state) => const Navigator(),
+      name: MainNavigator.routeName,
+      path: MainNavigator.routeURL,
+      builder: (context, state) => const MainNavigator(),
     ),
     GoRoute(
       name: InterestsScreen.routeName,
