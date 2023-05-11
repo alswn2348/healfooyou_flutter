@@ -10,83 +10,81 @@ class UserProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 2,
-      child: CustomScrollView(
-        slivers: [
-          const SliverAppBar(
-            title: Text("마이 페이지"),
-          ),
-          SliverToBoxAdapter(
-            child: Column(
-              children: [
-                Container(
-                  padding: const EdgeInsets.only(
-                    right: Sizes.size32,
-                    left: Sizes.size32,
-                    top: Sizes.size72,
+      child: NestedScrollView(
+        headerSliverBuilder: (context, innerBoxIsScrolled) {
+          return [
+            const SliverAppBar(
+              title: Text("마이 페이지"),
+            ),
+            SliverToBoxAdapter(
+              child: Column(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.only(
+                      right: Sizes.size32,
+                      left: Sizes.size32,
+                      top: Sizes.size72,
+                    ),
+                    color: Colors.grey.shade200,
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(Sizes.size20),
+                          color: Colors.white,
+                          child: Row(
+                            children: const [
+                              Icon(Icons.person),
+                              Text("name"),
+                            ],
+                          ),
+                        ),
+                        Gaps.v32,
+                        Gaps.v5,
+                        const TabBotton(
+                          text: "리뷰 관리",
+                        ),
+                        Gaps.v5,
+                        const TabBotton(
+                          text: "문의 목록",
+                        ),
+                        Gaps.v20,
+                      ],
+                    ),
                   ),
-                  color: Colors.grey.shade200,
-                  child: Column(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(Sizes.size20),
-                        color: Colors.white,
-                        child: Row(
-                          children: const [
-                            Icon(Icons.person),
-                            Text("name"),
-                          ],
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.grey.shade200,
+                      border: Border.symmetric(
+                        horizontal: BorderSide(
+                          color: Colors.grey.shade400,
+                          width: 0.5,
                         ),
                       ),
-                      Gaps.v32,
-                      Gaps.v5,
-                      const TabBotton(
-                        text: "리뷰 관리",
+                    ),
+                    child: const TabBar(
+                      indicatorSize: TabBarIndicatorSize.label,
+                      indicatorColor: Colors.black,
+                      labelColor: Colors.black,
+                      labelPadding: EdgeInsets.symmetric(
+                        vertical: Sizes.size10,
                       ),
-                      Gaps.v5,
-                      const TabBotton(
-                        text: "문의 목록",
-                      ),
-                      Gaps.v20,
-                    ],
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade200,
-                    border: Border.symmetric(
-                      horizontal: BorderSide(
-                        color: Colors.grey.shade400,
-                        width: 0.5,
-                      ),
+                      tabs: [
+                        Icon(Icons.thumb_up_outlined),
+                        FaIcon(FontAwesomeIcons.heart),
+                      ],
                     ),
                   ),
-                  child: const TabBar(
-                    indicatorSize: TabBarIndicatorSize.label,
-                    indicatorColor: Colors.black,
-                    labelColor: Colors.black,
-                    labelPadding: EdgeInsets.symmetric(
-                      vertical: Sizes.size10,
-                    ),
-                    tabs: [
-                      Icon(Icons.thumb_up_outlined),
-                      FaIcon(FontAwesomeIcons.heart),
-                    ],
-                  ),
-                ),
-                const SizedBox(
-                  width: 200,
-                  height: 500,
-                  child: TabBarView(
-                    children: [
-                      Center(child: Text("page 1")),
-                      Center(child: Text("page 2")),
-                    ],
-                  ),
-                )
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+          ];
+        },
+        body: const TabBarView(
+          children: [
+            Center(child: Text("page 1")),
+            Center(child: Text("page 2")),
+          ],
+        ),
       ),
     );
   }
