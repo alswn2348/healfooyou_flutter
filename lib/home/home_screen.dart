@@ -50,7 +50,6 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
         ),
-        // Disable opening the drawer with a swipe gesture.
         drawerEnableOpenDragGesture: false,
       ),
     );

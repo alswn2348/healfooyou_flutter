@@ -79,10 +79,78 @@ class UserProfileScreen extends StatelessWidget {
             ),
           ];
         },
-        body: const TabBarView(
+        body: TabBarView(
           children: [
-            Center(child: Text("page 1")),
-            Center(child: Text("page 2")),
+            GridView.builder(
+              itemCount: 20,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 1,
+                childAspectRatio: 5 / 1, // itme 비율 가로 / 세로
+              ),
+              itemBuilder: (context, index) => Column(
+                children: [
+                  AspectRatio(
+                    aspectRatio: 5 / 1,
+                    child: Container(
+                      padding: const EdgeInsets.all(Sizes.size20),
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade200,
+                        border: Border.symmetric(
+                          horizontal: BorderSide(
+                            color: Colors.grey.shade400,
+                            width: 0.2,
+                          ),
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const CircularProgressIndicator.adaptive(),
+                          Text("Item $index"),
+                          const Icon(Icons.thumb_up),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            GridView.builder(
+              itemCount: 20,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 1,
+                childAspectRatio: 5 / 1,
+              ),
+              itemBuilder: (context, index) => Column(
+                children: [
+                  AspectRatio(
+                    aspectRatio: 5 / 1,
+                    child: Container(
+                      padding: const EdgeInsets.all(Sizes.size20),
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade200,
+                        border: Border.symmetric(
+                          horizontal: BorderSide(
+                            color: Colors.grey.shade400,
+                            width: 0.2,
+                          ),
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const CircularProgressIndicator.adaptive(),
+                          Text("Item $index"),
+                          const FaIcon(
+                            FontAwesomeIcons.solidHeart,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
