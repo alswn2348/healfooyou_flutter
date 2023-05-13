@@ -1,11 +1,18 @@
+import 'package:go_router/go_router.dart';
+
 import 'package:flutter/material.dart';
 import 'package:healfooyou_flutter/constants/gaps.dart';
 import 'package:healfooyou_flutter/constants/sizes.dart';
+import 'package:healfooyou_flutter/survey/more_information_screen.dart';
 
 class InterestsScreen extends StatelessWidget {
   static const String routeName = "interests";
   static const String routeURL = "/interests";
   const InterestsScreen({super.key});
+
+  void onBailiwickTap(BuildContext context) {
+    context.pushNamed(MoreInformationScreen.routeName);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,22 +25,31 @@ class InterestsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Text("관심있는 분야"),
+          children: [
+            const Text("관심있는 분야"),
             Gaps.v60,
-            FormButton(
-              icon: Icons.directions_walk,
-              text: "건강",
+            GestureDetector(
+              onTap: () => onBailiwickTap(context),
+              child: const FormButton(
+                icon: Icons.directions_walk,
+                text: "건강",
+              ),
             ),
             Gaps.v20,
-            FormButton(
-              icon: Icons.directions_run,
-              text: "다이어트",
+            GestureDetector(
+              onTap: () => onBailiwickTap(context),
+              child: const FormButton(
+                icon: Icons.directions_run,
+                text: "다이어트",
+              ),
             ),
             Gaps.v20,
-            FormButton(
-              icon: Icons.directions_bike,
-              text: "운동능력 향상",
+            GestureDetector(
+              onTap: () => onBailiwickTap(context),
+              child: const FormButton(
+                icon: Icons.directions_bike,
+                text: "운동능력 향상",
+              ),
             ),
           ],
         ),
